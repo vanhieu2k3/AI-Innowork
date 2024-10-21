@@ -1,4 +1,0 @@
-age,heart_rate,spo2,temperature,accelerometer,prediction
-6,90,100.0,36.54,1.62083667956226,cảnh báo
-6,74,95.3,36.54,0.3,bình thường
-10,110,96.3,36.54,2.8,nguy hiểm

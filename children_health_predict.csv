@@ -1,0 +1,8 @@
+age,gender,height,weight,heart_rate,spo2,temperature,accelerometer,prediction
+10,male,120,27,110,96.3,36.54,falling,warning
+10,male,120,27,126,96.7,38.0,falling,warning
+8,male,120,27,126,96.7,38.0,falling,warning
+8,male,120,36,126,96.7,38.0,falling,warning
+8,male,117,36,126,96.7,38.0,falling,warning
+6,female,130,32,83,100.0,37.0,lying,normal
+6,male,124,43,107,100,38.5,lying,danger

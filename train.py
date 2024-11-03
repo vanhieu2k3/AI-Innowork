@@ -7,12 +7,12 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.compose import ColumnTransformer
 import joblib
 
-df = pd.read_csv("children_health_data.csv")
+df = pd.read_csv("children_health_data_update.csv")
 print("Dữ liệu 5 hàng đầu:")
 print(df.head())
 
-x = df.drop('outcome', axis=1)  # Các feature
-y = df['outcome']  # Kết quả dự đoán (outcome)
+x = df.drop('outcome', axis=1)  
+y = df['outcome'] 
 
 numerical_features = x.select_dtypes(include=['float64', 'int64']).columns
 categorical_features = x.select_dtypes(include=['object']).columns
@@ -30,7 +30,6 @@ x_train, x_test, y_train, y_test = train_test_split(x, y_encoded, test_size=0.2,
 x_train_preprocessed = preprocessor.fit_transform(x_train)
 x_test_preprocessed = preprocessor.transform(x_test)
 
-
 param_grid = {
     'C': [0.1, 1, 10],
     'gamma': ['scale', 'auto'],
@@ -44,7 +43,6 @@ svm_model = grid_search.best_estimator_
 y_pred = svm_model.predict(x_test_preprocessed)
 conf_matrix = confusion_matrix(y_test, y_pred)
 class_report = classification_report(y_test, y_pred, target_names=label_encoder.classes_)
-
 print("Confusion Matrix:")
 print(conf_matrix)
 print("Classification Report:")
